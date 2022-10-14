@@ -63,7 +63,7 @@ function App() {
         setTags(res);
         setClickedTag(false);
       });
-  }, [search]);
+  }, [search, clickedTag]);
 
   return (
     <div className="App">
@@ -76,7 +76,7 @@ function App() {
           <div className="friends">
             <img src={friends} alt="friends" />
           </div>
-          <form>
+          <form className="form">
             <input
               className={`${visible ? "visible-tags" : "hidden-tags"}`}
               type="search"

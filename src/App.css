@@ -68,6 +68,10 @@ body {
   margin-left: 25px;
 }
 
+.search-bar .form {
+  width: 100%;
+}
+
 .search-bar input {
   border: 1px solid var(--violet);
   border-right: none;
@@ -101,7 +105,7 @@ body {
 
 .btn:active {
   box-shadow: 7px 6px 28px 1px var(--violet-shadow);
-  transform: scale(0.98);
+  trans.form: scale(0.98);
 }
 
 .btn-search {
@@ -165,4 +169,27 @@ footer {
   height: 80px;
   background-color: var(--violet);
   color: white;
+}
+
+@media (min-width: 375px) {
+  .header {
+    padding: 50px 0 50px 0;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
+  .friends img {
+    width: 90%;
+  }
+
+  .form {
+    display: flex;
+    justify-content: center;
+  }
+
+ .search-bar input {
+  width: 100%;
+ }
 }
