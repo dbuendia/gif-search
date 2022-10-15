@@ -47,7 +47,6 @@ function App() {
       });
   }, [input]);
 
-  console.log(clickedTag);
   // Cada vez que cambie search (cada vez que cambie el input)
   // Se permite ver el dropdown o no con el estado visible.
   // Se hace la petición para conseguir las tags de autocompletado.
