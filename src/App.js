@@ -15,6 +15,7 @@ function App() {
   const [visible, setVisible] = useState(false);
   const [tags, setTags] = useState([]);
   const [clickedTag, setClickedTag] = useState(false);
+  const [dark, setDark] = useState(false);
 
   const handleSearchInput = (e) => {
     setSearch(e.target.value);
@@ -42,9 +43,11 @@ function App() {
       .then((response) => {
         setGifs(response.data);
         setLoading(false);
+        setClickedTag(false);
       });
   }, [input]);
 
+  console.log(clickedTag);
   // Cada vez que cambie search (cada vez que cambie el input)
   // Se permite ver el dropdown o no con el estado visible.
   // Se hace la petición para conseguir las tags de autocompletado.
@@ -61,13 +64,12 @@ function App() {
       })
       .then((res) => {
         setTags(res);
-        setClickedTag(false);
       });
-  }, [search, clickedTag]);
+  }, [search]);
 
   return (
-    <div className="App">
-      <Header />
+    <div className={`${dark ? "App dark" : "App"}`}>
+      <Header dark={dark} setDark={setDark} />
       <main className="App-body">
         <h1 className="title">
           ¡Inspírate y busca los mejores <b>GIFS</b>!

@@ -171,6 +171,12 @@ footer {
   color: white;
 }
 
+/* Dark Mode Styles */
+.App.dark {
+  background-color: darkcyan;
+  /* max-width: 100%; */
+}
+
 @media (min-width: 375px) {
   .header {
     padding: 50px 0 50px 0;
