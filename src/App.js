@@ -3,9 +3,19 @@ import { useEffect, useState } from "react";
 import React from "react";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import lupa from "./img/lupa.svg";
+import magnifierIcon from "./img/lupa.svg";
 import loadingIcon from "./img/oval-loader.svg";
 import friends from "./img/friends.svg";
+
+// function App() {
+//   return (
+//     <>
+//       <Header />
+//       <Search />
+//       <Footer />
+//     </>
+//   );
+// }
 
 function App() {
   const [search, setSearch] = useState("");
@@ -74,12 +84,12 @@ function App() {
           ¡Inspírate y busca los mejores <b>GIFS</b>!
         </h1>
         <div className="search-bar">
-          <div className="friends">
+          <div className="search-bar-image">
             <img src={friends} alt="friends" />
           </div>
           <form className="form">
             <input
-              className={`${visible ? "visible-tags" : "hidden-tags"}`}
+              className={`input ${visible ? "visible-tags" : "hidden-tags"}`}
               type="search"
               placeholder="Busca un GIF"
               value={search}
@@ -87,29 +97,29 @@ function App() {
             />
             <button
               type="submit"
-              className={`btn btn-search ${
+              className={`btn-search ${
                 visible ? `visible-tags` : `hidden-tags`
               }`}
               onClick={(e) => handleSearchClick(search, e)}
             >
-              <img src={lupa} className="lupa-icon" alt="lupa" />
+              <img src={magnifierIcon} className="magnifier-icon" alt="lupa" />
             </button>
           </form>
           {visible && (
             <div className="dropdown">
               {/* Iteramos sobre el array de tags y las mostramos */}
-              <li>
+              <ul>
                 {visible &&
                   tags.data.map((elem) => (
-                    <ul
+                    <li
                       key={elem.name}
                       className="tag"
                       onClick={handleTagClick}
                     >
                       {elem.name}
-                    </ul>
+                    </li>
                   ))}
-              </li>
+              </ul>
             </div>
           )}
         </div>

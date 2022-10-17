@@ -4,11 +4,6 @@
   margin: 0;
 }
 
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
 :root {
   --violet: rgb(86, 46, 229);
   --violet-shadow: rgba(86, 46, 229, 0.20);
@@ -63,7 +58,7 @@ body {
   color: var(--violet);
 }
 
-.friends {
+.search-bar-image {
   margin-top: 40px;
   margin-left: 25px;
 }
@@ -72,7 +67,7 @@ body {
   width: 100%;
 }
 
-.search-bar input {
+.search-bar .input {
   border: 1px solid var(--violet);
   border-right: none;
   border-radius: 20px 0 0 20px;
@@ -81,11 +76,12 @@ body {
 }
 
 .search-bar .visible-tags {
-  border-radius: 20px 0 0 0;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 0;
   border-bottom: none;
 }
 
-.lupa-icon {
+.magnifier-icon {
   width: 10px;
 }
 
@@ -96,29 +92,37 @@ body {
 
 .btn {
   background-color: var(--violet);
-  border: none;
   color: white;
   border: 1px solid var(--violet);
   border-radius: 20px;
   padding: 10px;
 }
 
+.btn-dark {
+  
+}
+
 .btn:active {
   box-shadow: 7px 6px 28px 1px var(--violet-shadow);
-  trans.form: scale(0.98);
+  transform: scale(0.98);
 }
 
 .btn-search {
-  border-radius: 0 20px 20px 0px;
+  background-color: var(--violet);
+  color: white;
+  border: 1px solid var(--violet);
+  border-radius: 0 20px 20px 0;
+  padding: 10px;
 }
 
-.search-bar .btn.btn-search.visible-tags {
-  border-radius: 0px 20px 0 0px; 
+.search-bar .btn-search.visible-tags {
+  border-radius: 0 20px 0 0;
 }
 
 .dropdown {
   border: 1px solid var(--violet);
-  border-radius: 0 0 20px 20px;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
 }
 
 .dropdown li {
@@ -195,7 +199,7 @@ footer {
     justify-content: center;
   }
 
- .search-bar input {
-  width: 100%;
+ .search-bar .input {
+    width: 100%;
  }
 }
