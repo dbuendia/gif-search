@@ -8,6 +8,8 @@
   --violet: rgb(86, 46, 229);
   --violet-shadow: rgba(86, 46, 229, 0.20);
   --turquoise: rgb(79, 227, 193);
+  --dark-grey: rgb(40, 40, 40);
+  --light-grey: rgb(64, 64, 64);
 }
 
 html {
@@ -20,6 +22,9 @@ body {
 
 #root {
   border-top: 5px solid var(--violet);
+}
+
+.app-wrapper {
   display: flex;
   justify-content: center;
 }
@@ -98,10 +103,6 @@ body {
   padding: 10px;
 }
 
-.btn-dark {
-  
-}
-
 .btn:active {
   box-shadow: 7px 6px 28px 1px var(--violet-shadow);
   transform: scale(0.98);
@@ -129,7 +130,7 @@ body {
   list-style-type: none;
 }
 
-.dropdown li ul:hover {
+.dropdown ul li:hover {
   font-weight: bold;
   color: var(--violet);
 }
@@ -176,9 +177,21 @@ footer {
 }
 
 /* Dark Mode Styles */
-.App.dark {
-  background-color: darkcyan;
-  /* max-width: 100%; */
+.app-wrapper.dark {
+  background-color: var(--dark-grey);
+}
+
+.dark .input {
+  background-color: var(--dark-grey);
+  color: white;
+}
+
+.dark .tag {
+  color: white;
+}
+
+.dark .gif-container {
+  background-color: var(--light-grey);
 }
 
 @media (min-width: 375px) {
