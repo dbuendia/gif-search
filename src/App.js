@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useEffect, useState } from "react";
+import React from "react";
+import Header from "./components/Header";
+import Search from "./components/Search";
+import Footer from "./components/Footer";
 
 function App() {
+  const [dark, setDark] = useState(false);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={`${dark ? "app-wrapper dark" : "app-wrapper"}`}>
+      <div className={"App"}>
+        <Header dark={dark} setDark={setDark} />
+        <Search />
+        <Footer />
+      </div>
     </div>
   );
 }
